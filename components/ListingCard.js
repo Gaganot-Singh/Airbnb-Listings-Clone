@@ -23,15 +23,22 @@ export default function ListingCard(props) {
   return (
     <>
     <Link href={`/listing/${props.listing._id}`} passHref legacyBehavior>
-    <Card className="mb-4">
+    <Card className="mb-1">
       <Card.Img onError={(event) => {
               event.target.onerror = null;
-              event.target.src = "https://placehold.co/600x400?text=Photo+Not+Available";
-            }} variant="top" src={images.picture_url} className='h-18'/>
+              event.target.src = "https://placehold.co/990x945?text=Photo+Not+Available";
+            }} variant="top" src={images.picture_url} className='h-72 rounded-lg'/>
             </Card>
             </Link>
       <Card.Body>
-        <p className='font-bold'> {property_type} in {address.suburb} </p>
+      <p className="font-bold inline-block flex justify-between">
+        {property_type} in {address.market}
+        <span className="inline-block float-right">
+          {overallRating} ★ ({number_of_reviews})
+        </span>
+      </p>
+
+        
         <Card.Subtitle className="text-muted"> {name}</Card.Subtitle>
         <Card.Text>
           {beds} beds · {overallRating} ★ ({number_of_reviews} reviews)
