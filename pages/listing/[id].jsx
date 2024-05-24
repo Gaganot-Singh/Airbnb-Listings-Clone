@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+import { useRouter, useEffect } from 'next/router';
 import useSWR from 'swr';
 import ListingDetails from '@/components/ListingDetails';
 import Error from 'next/error';
