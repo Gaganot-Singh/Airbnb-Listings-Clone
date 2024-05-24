@@ -121,7 +121,7 @@ export default function ListingDetails(props) {
               <Card.Text className="font-weight-bold ">
                 <h4>${price.toFixed(2)} CAD <span className="text-muted text-lg">night</span></h4>
                 <p className='underline text-muted m-0 inline-block flex justify-between m-1'> Price: <span className='text-right inline-block float-right'> ${price.toFixed(2)} CAD </span> </p>
-                {cleaning_fee && (<p className='underline text-muted m-0 inline-block flex justify-between m-1'> Cleaning Fee: <span className='text-right inline-block float-right'> ${cleaning_fee.toFixed(2)} CAD </span> </p>) }
+                {cleaning_fee && (<p className='underline text-muted m-0 inline-block flex justify-between m-1'> Cleaning Fee: <span className='text-right inline-block float-right'> ${cleaning_fee} CAD </span> </p>) }
                 {security_deposit &&  (<p className='underline text-muted m-0 inline-block flex justify-between m-1'> Airbnb service fee: <span className='text-right inline-block float-right'> ${security_deposit} CAD </span> </p>)}
                 <p className='underline text-muted m-0 inline-block flex justify-between m-1'> Taxes: <span className='text-right inline-block float-right'> ${taxes.toFixed(2)} CAD </span> </p>
               </Card.Text>
