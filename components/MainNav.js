@@ -10,7 +10,7 @@ export default function MainNav() {
         <Navbar expand="lg" className="fixed-top bg-white border-b-2">
       <Container fluid>
         
-        <Navbar.Brand><Link href='/'> <img src="./airbnb.svg" alt="LinkedIn" className="w-32 h-8 m-1" /> </Link> </Navbar.Brand>
+        <Navbar.Brand><Link href='/'> <img src="./airbnb.svg" alt="Airbnb logo" className="w-32 h-8 m-1" /> </Link> </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

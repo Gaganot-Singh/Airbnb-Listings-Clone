@@ -2,7 +2,6 @@ import { useRouter } from 'next/router';
 import useSWR from 'swr';
 import ListingDetails from '@/components/ListingDetails';
 import Error from 'next/error';
-import PageHeader from '@/components/PageHeader';
 
 export default function Listing(){
   const router = useRouter();
@@ -20,7 +19,6 @@ export default function Listing(){
 
   return (
     <>
-      <PageHeader text={listing.name}/>
       <ListingDetails listing={listing} />
     </>
   );

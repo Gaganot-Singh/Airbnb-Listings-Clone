@@ -13,52 +13,60 @@ export default function ListingDetails(props) {
     number_of_reviews,
     images,
   } = props.listing;
-
   return (
     <Container>
       <Row>
         <Col lg={12}>
-          <h2 className="mb-4">{name}</h2>
+          <h3 className="mb-4 mt-4">{name}</h3>
         </Col>
       </Row>
       <Row>
-        <Col lg={8}>
-          <Row>
-            <Col md={12} className="mb-3">
+        <Col md={12}>
+          <Row>  
+            <Col md={6} className='p-1'>
               <img
                 onError={(event) => {
                   event.target.onerror = null;
-                  event.target.src = "https://placehold.co/600x400?text=Photo+Not+Available";
+                  event.target.src = "https://placehold.co/600x450?text=Photo+Not+Available";
                 }}
-                className="img-fluid w-100"
+                className="h-[30rem] w-[45rem] rounded"
                 src={images.picture_url}
                 alt="Listing Main Image"
               />
             </Col>
-            {images.additional_pictures && images.additional_pictures.map((url, index) => (
-              <Col md={6} className="mb-3" key={index}>
-                <img
-                  onError={(event) => {
-                    event.target.onerror = null;
-                    event.target.src = "https://placehold.co/300x200?text=Photo+Not+Available";
-                  }}
-                  className="img-fluid w-100"
-                  src={url}
-                  alt={`Listing Image ${index + 1}`}
-                />
-              </Col>
+            <Col md={6}>
+          
+            {Array.from({ length: 2 }).map((_, rowIndex) => (
+              <Row key={`row-${rowIndex}`} className='g-2 pt-1'>
+                {Array.from({ length: 2 }).map((_, colIndex) => (
+                  <Col md={6} className="mb-2" key={`col-${rowIndex * 2 + colIndex}`}>
+                    <img
+                      onError={(event) => {
+                        event.target.onerror = null;
+                        event.target.src = "https://placehold.co/800x600?text=Photo+Not+Available";
+                      }}
+                      src='https://placehold.co/800x600?text=Photo+Not+Available'
+                      className="img-fluid w-100 rounded"
+                      alt={`Listing Image ${rowIndex * 2 + colIndex + 1}`}
+                    />
+                  </Col>
+                ))}
+              </Row>
             ))}
+            </Col>
           </Row>
         </Col>
-        <Col lg={4}>
+      </Row>
+
+        <Row>
+        <Col md={7}>
+
+        </Col>
+        <Col md={4} className='m-4'>
           <Card className="mb-4">
             <Card.Body>
               <Card.Text className="font-weight-bold">
-                ${price.toFixed(2)} CAD <span>night</span>
-              </Card.Text>
-              <Card.Text>
-                <strong>Check-in:</strong> 06-11-2024 <br />
-                <strong>Guests:</strong> 1 guest
+                <h4>${price.toFixed(2)} CAD <span className="text-muted text-lg">night</span></h4>
               </Card.Text>
             </Card.Body>
           </Card>
