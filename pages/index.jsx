@@ -36,7 +36,7 @@ export default function Home() {
       {data ? (
         <>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 m-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 ml-20 mr-20 mt-4 mb-4">
           {pageData.map(listing => (
             <div key={listing._id}>
               <ListingCard listing={listing} />
